@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="HistologyBlocksControlScreen.HistologyManagmentScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:local="clr-namespace:HistologyBlocksControlScreen" xmlns:xctk1="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="#FFB9D2AD">
+
+    <Grid x:Name="mainGrid" Background="#FFF4D8FF" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="9.6*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="348*"/>
+        </Grid.RowDefinitions>
+
+
+        <Label x:Name="lblHeader" Grid.Row="0" Grid.ColumnSpan="3" FontFamily="Arial Rounded MT Bold" FontSize="40" HorizontalAlignment="Right">מסך בלוקים היסטולוגיה</Label>
+        <Border x:Name="border_associaion" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" BorderBrush="PaleVioletRed">
+            <Grid Grid.Column="1" Margin="0,2,0,0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height ="30"/>
+                    <RowDefinition Height ="40"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row ="1" x:Name="btnAssociation" Grid.Column="0" Content="שיוך"  Background="#FFDAADED" FontFamily="Arial Rounded MT Bold"  FontSize="25" Click="Button_Click_1" HorizontalAlignment="Center" Width="150" />
+                <Label Grid.Row ="0" Grid.Column="1" Content="רשימת עובדים" FontFamily="Arial Rounded MT Bold" FontSize="14" HorizontalAlignment="Center"  VerticalAlignment="Bottom" />
+                <ComboBox Grid.Row ="1" Grid.Column="1" x:Name="cmbLabWorkers" FontSize="20" Margin="10,0,10,0" />
+
+
+            </Grid>
+        </Border>
+        <TabControl FlowDirection="RightToLeft" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" >
+            <TabItem x:Name="managerTab" Width="200" Height="40" Header="מסך מנהל" FontFamily="Arial Rounded MT Bold" FontSize="25">
+
+                <Grid x:Name="managerTabContent1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="246*"/>
+                        <ColumnDefinition Width="35*"/>
+                        <ColumnDefinition Width="481*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label FontSize="20" Grid.ColumnSpan="3">מסך מנהל</Label>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="workerTab" Width="220" Height="40" Header="מסך עובד מעבדה" FontFamily="Arial Rounded MT Bold" FontSize="25">
+                <Grid x:Name="workerTabContent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="127"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label  Grid.Column="0" FontSize="20">מסך עובד מעבדה</Label>
+                    <Grid Grid.Column="1" Margin="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="בחר סל" FontSize="10"/>
+
+                        <ComboBox Grid.Row="1" Name="cmbBasket" FontSize="12"/>
+                    </Grid>
+
+                    <Grid Grid.Column="2" Margin="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="בחר תאריך מאקרו" FontSize="10"/>
+                        <DatePicker Grid.Row="1" Name="dt_Macro" FontSize="15" />
+                    </Grid>
+                    <Button Click="BtnFilter_Click" Content="סינון" Grid.Column="3" Margin="4" Background="#FFDAADED"/>
+                    <Button Click="Button_Click" Content="ביטול סינון" Grid.Column="4" Margin="4" Background="#FFDAADED"/>
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
+
+        <Border x:Name="borderDataGrid_host" Grid.Column="1" Grid.Row="3" Background="Blue">
+            <WindowsFormsHost  x:Name="winformsHostHistoBlockGridView"/>
+        </Border>
+    </Grid>
+
+</UserControl>

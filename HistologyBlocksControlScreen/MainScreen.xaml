@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="HistologyBlocksControlScreen.MainScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HistologyBlocksControlScreen"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9.5*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Background="#f5f5f5" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF78AB85"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="Margin" Value="20,10,20,10"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="FontFamily" Value="Arial"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Height" Value="50"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+
+                <Button Content="מסך בקרה" Grid.Row="1" Click="Button_Click"/>
+                <Button Content="מסך שיקוע" Grid.Row="2" Click="Button_Click"/>
+                <Button Content="מסך טרימינג" Grid.Row="3" Click="Button_Click"/>
+                <Button Content="מסך חיתוך" Grid.Row="4" Click="Button_Click"/>
+            </Grid>
+
+
+
+            <Grid x:Name="hostGrid" Grid.Column="0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+
+
+        </Grid>
+    </Grid>
+</UserControl>

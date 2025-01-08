@@ -69,7 +69,7 @@
             </DataGrid.Resources>
 
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="מספר בלוק" Width="150">
+                <DataGridTemplateColumn Header="מספר פתולאב" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}" HorizontalAlignment="Center"/>
@@ -83,10 +83,10 @@
                                 <Grid.Style>
                                     <Style TargetType="Grid">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding ColorsVec[0]}" Value="True">
-                                                <Setter Property="Background" Value="Green" />
+                                            <DataTrigger Binding="{Binding ColorsVec[0]}" Value="TRUE">
+                                                <Setter Property="Background" Value="#FF78AB85" />
                                             </DataTrigger>
-                                            <DataTrigger Binding="{Binding ColorsVec[0]}" Value="False">
+                                            <DataTrigger Binding="{Binding ColorsVec[0]}" Value="FALSE">
                                                 <Setter Property="Background" Value="Red" />
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -104,7 +104,7 @@
                                     <Style TargetType="Grid">
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding ColorsVec[1]}" Value="True">
-                                                <Setter Property="Background" Value="Green" />
+                                                <Setter Property="Background" Value="#FF78AB85" />
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding ColorsVec[1]}" Value="False">
                                                 <Setter Property="Background" Value="Red" />
@@ -124,7 +124,7 @@
                                     <Style TargetType="Grid">
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding ColorsVec[2]}" Value="True">
-                                                <Setter Property="Background" Value="Green" />
+                                                <Setter Property="Background" Value="#FF78AB85" />
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding ColorsVec[2]}" Value="False">
                                                 <Setter Property="Background" Value="Red" />

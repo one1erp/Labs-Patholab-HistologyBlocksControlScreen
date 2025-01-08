@@ -75,7 +75,7 @@ namespace HistologyBlocksControlScreen
   
         public void SetDataGrid()
         {
-            string query = $"select a.ALIQUOT_ID,a.name, au.U_ALIQUOT_STATION, au.U_OLD_ALIQUOT_STATION from lims_sys.aliquot a join lims_sys.aliquot_user au\r\non a.ALIQUOT_ID = au.ALIQUOT_ID\r\nwhere \r\nau.U_GLASS_TYPE = 'B' and a.status in('C','P','V','I')\r\nand a.name like 'B%'\r\nand au.U_LAST_LABORANT = {_ntlsUser.GetOperatorId()} and au.U_ALIQUOT_STATION in ('30','45','60')";
+            string query = $"select a.ALIQUOT_ID,au.u_patholab_aliquot_name name, au.U_ALIQUOT_STATION, au.U_OLD_ALIQUOT_STATION from lims_sys.aliquot a join lims_sys.aliquot_user au\r\non a.ALIQUOT_ID = au.ALIQUOT_ID\r\nwhere \r\nau.U_GLASS_TYPE = 'B' and a.status in('C','P','V','I')\r\nand a.name like 'B%'\r\nand au.U_LAST_LABORANT Changes according to the tfs= {_ntlsUser.GetOperatorId()} and au.U_ALIQUOT_STATION in ('30','45','60', '27', '40')";
 
             rows = new List<BlockRow>();
 

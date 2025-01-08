@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <LangVersion>8.0</LangVersion>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ACC0C2FA-E642-42F4-8E1D-1EF08AFF4D65}</ProjectGuid>
+    <ProjectGuid>{B5C0F7E1-6AF8-44DD-B793-FAF4DEA7D1CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HistologyBlocksControlScreen</RootNamespace>
@@ -53,7 +53,7 @@
     <Reference Include="Interop.LSSERVICEPROVIDERLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\..\..\NesherProj\OrderV2\OrderV2\obj\Debug\Interop.LSSERVICEPROVIDERLib.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Thermo\Nautilus\Interop.LSSERVICEPROVIDERLib.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
